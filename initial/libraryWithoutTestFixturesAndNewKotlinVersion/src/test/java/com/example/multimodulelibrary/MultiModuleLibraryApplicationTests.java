@@ -1,4 +1,4 @@
-package com.example.multimoduleapplication;
+package com.example.multimodulelibrary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class MultiModuleApplicationTests {
+class MultiModuleLibraryApplicationTests {
     @Autowired
     private org.springframework.context.ApplicationContext applicationContext;
 
@@ -28,7 +28,7 @@ class MultiModuleApplicationTests {
                 }
             });
             assertThat(resources.length).isEqualTo(1);
-            assertThat(resources[0].getURL().toString()).containsPattern(Pattern.compile("jar:file:.*/gs-multi-module/initial/libraryWithTestFixturesAndNewKotlinVersion/build/libs/libraryWithTestFixturesAndNewKotlinVersion-0.0.1-SNAPSHOT-plain.jar!/someFile"));
+            assertThat(resources[0].getURL().toString()).containsPattern(Pattern.compile("file:.*/gs-multi-module/initial/libraryWithoutTestFixturesAndNewKotlinVersion/build/resources/main/someFile"));
         } catch (IOException e) {
             assert false;
         }

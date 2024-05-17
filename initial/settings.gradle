@@ -1,4 +1,9 @@
 rootProject.name = 'gs-multi-module'
 
-include 'library'
 include 'application'
+include 'library'
+include 'libraryWithTestFixturesAndNewKotlinVersion'
+include 'libraryWithTestFixturesAndOldKotlinVersion'
+include 'libraryWithoutTestFixturesAndNewKotlinVersion'
+include 'libraryWithoutTestFixturesAndOldKotlinVersion'
+
